@@ -13,7 +13,7 @@ import {
 import { dispatch } from './decorators/dispatch';
 import { select, select$ } from './decorators/select';
 import { WithSubStore } from './decorators/with-sub-store';
-import { NgReduxModule } from './ng-redux.module';
+import { _ngReduxFactory, NgReduxModule } from './ng-redux.module';
 
 // Warning: don't do this:
 //  export * from './foo'
@@ -27,6 +27,7 @@ export {
   FunctionSelector,
   Comparator,
   Transformer,
+  _ngReduxFactory,
   NgReduxModule,
   DevToolsExtension,
   enableFractalReducers,
