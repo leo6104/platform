@@ -1,0 +1,12 @@
+/**
+ * Sets a deeply-nested property value from an object, given a 'path'
+ * of property names or array indices. Path elements are created if
+ * not there already. Does not mutate the given object.
+ *
+ * @hidden
+ */
+export const setIn = (obj, [firstElem, ...restElems], value) => 'function' === typeof (obj[firstElem] || {}).setIn
+    ? Object.assign({}, obj, { [firstElem]: obj[firstElem].setIn(restElems, value) }) : Object.assign({}, obj, { [firstElem]: restElems.length === 0
+        ? value
+        : setIn(obj[firstElem] || {}, restElems, value) });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic2V0LWluLmpzIiwic291cmNlUm9vdCI6Im5nOi8vQGFuZ3VsYXItcmVkdXgvc3RvcmUvIiwic291cmNlcyI6WyJ1dGlscy9zZXQtaW4udHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Ozs7OztHQU1HO0FBQ0gsTUFBTSxDQUFDLE1BQU0sS0FBSyxHQUFHLENBQ25CLEdBQVEsRUFDUixDQUFDLFNBQVMsRUFBRSxHQUFHLFNBQVMsQ0FBc0IsRUFDOUMsS0FBVSxFQUNGLEVBQUUsQ0FDVixVQUFVLEtBQUssT0FBTyxDQUFDLEdBQUcsQ0FBQyxTQUFTLENBQUMsSUFBSSxFQUFFLENBQUMsQ0FBQyxLQUFLO0lBQ2hELENBQUMsbUJBQ00sR0FBRyxJQUNOLENBQUMsU0FBUyxDQUFDLEVBQUUsR0FBRyxDQUFDLFNBQVMsQ0FBQyxDQUFDLEtBQUssQ0FBQyxTQUFTLEVBQUUsS0FBSyxDQUFDLElBRXZELENBQUMsbUJBQ00sR0FBRyxJQUNOLENBQUMsU0FBUyxDQUFDLEVBQ1QsU0FBUyxDQUFDLE1BQU0sS0FBSyxDQUFDO1FBQ3BCLENBQUMsQ0FBQyxLQUFLO1FBQ1AsQ0FBQyxDQUFDLEtBQUssQ0FBQyxHQUFHLENBQUMsU0FBUyxDQUFDLElBQUksRUFBRSxFQUFFLFNBQVMsRUFBRSxLQUFLLENBQUMsR0FDcEQsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qKlxuICogU2V0cyBhIGRlZXBseS1uZXN0ZWQgcHJvcGVydHkgdmFsdWUgZnJvbSBhbiBvYmplY3QsIGdpdmVuIGEgJ3BhdGgnXG4gKiBvZiBwcm9wZXJ0eSBuYW1lcyBvciBhcnJheSBpbmRpY2VzLiBQYXRoIGVsZW1lbnRzIGFyZSBjcmVhdGVkIGlmXG4gKiBub3QgdGhlcmUgYWxyZWFkeS4gRG9lcyBub3QgbXV0YXRlIHRoZSBnaXZlbiBvYmplY3QuXG4gKlxuICogQGhpZGRlblxuICovXG5leHBvcnQgY29uc3Qgc2V0SW4gPSAoXG4gIG9iajogYW55LFxuICBbZmlyc3RFbGVtLCAuLi5yZXN0RWxlbXNdOiAoc3RyaW5nIHwgbnVtYmVyKVtdLFxuICB2YWx1ZTogYW55LFxuKTogb2JqZWN0ID0+XG4gICdmdW5jdGlvbicgPT09IHR5cGVvZiAob2JqW2ZpcnN0RWxlbV0gfHwge30pLnNldEluXG4gICAgPyB7XG4gICAgICAgIC4uLm9iaixcbiAgICAgICAgW2ZpcnN0RWxlbV06IG9ialtmaXJzdEVsZW1dLnNldEluKHJlc3RFbGVtcywgdmFsdWUpLFxuICAgICAgfVxuICAgIDoge1xuICAgICAgICAuLi5vYmosXG4gICAgICAgIFtmaXJzdEVsZW1dOlxuICAgICAgICAgIHJlc3RFbGVtcy5sZW5ndGggPT09IDBcbiAgICAgICAgICAgID8gdmFsdWVcbiAgICAgICAgICAgIDogc2V0SW4ob2JqW2ZpcnN0RWxlbV0gfHwge30sIHJlc3RFbGVtcywgdmFsdWUpLFxuICAgICAgfTtcbiJdfQ==

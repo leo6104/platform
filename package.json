@@ -1,91 +1,49 @@
 {
-  "name": "platform",
-  "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ],
-    "nohoist": [
-      "example-app/@angular-redux/store",
-      "example-app/@angular-redux/form",
-      "example-app/@angular-redux/router",
-      "example-app/ng-packagr"
-    ]
+  "name": "@angular-redux/store",
+  "version": "10.0.0",
+  "description": "Angular bindings for Redux",
+  "author": "William Buchwalter <wbuchwalter@gmail.com> (http://github.com/wbuchwalter)",
+  "license": "MIT",
+  "homepage": "https://github.com/angular-redux/platform",
+  "main": "bundles/angular-redux-store.umd.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angular-redux/platform.git"
   },
-  "scripts": {
-    "build": "npm-run-all build:*",
-    "build:store": "yarn workspace @angular-redux/store build",
-    "build:form": "yarn workspace @angular-redux/form build",
-    "build:router": "yarn workspace @angular-redux/router build",
-    "build:example-app": "yarn workspace example-app build",
-    "release:canary": "lerna publish --canary --dist-tag canary --npm-client npm",
-    "release:stable": "lerna version",
-    "release:stable:ci": "lerna publish from-git",
-    "clean": "npm-run-all -p clean:*",
-    "clean:deps": "npm-run-all -p clean:deps:*",
-    "clean:deps:workspace": "rimraf node_modules",
-    "clean:deps:packages": "rimraf packages/*/node_modules",
-    "clean:coverage": "rimraf coverage",
-    "clean:dist": "rimraf packages/*/dist",
-    "docs": "docsify serve ./docs",
-    "lint": "npm-run-all -p lint:*",
-    "lint:packages": "tslint -p tsconfig.json",
-    "lint:prettier": "prettier -l \"**/*.*(ts|js|css|scss|json|md)\"",
-    "test": "jest --coverage",
-    "test:ci": "jest --coverage --ci --maxWorkers=2",
-    "test:watch": "jest --watch",
-    "commit": "commit",
-    "prettier": "prettier --write \"**/*.*(ts|js|css|scss|json|md)\"",
-    "run:app": "yarn workspace example-app bootstrap && yarn workspace example-app start"
+  "bugs": {
+    "url": "https://github.com/angular-redux/platform/issues"
   },
-  "lint-staged": {
-    "*.{ts,js,css,scss,json,md}": [
-      "prettier --write",
-      "git add"
-    ]
+  "keywords": [
+    "angular",
+    "angular2",
+    "redux",
+    "store",
+    "state management"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
   "engines": {
     "node": ">=8"
   },
-  "devDependencies": {
-    "@angular/animations": "9.0.0-next.6",
-    "@angular/common": "9.0.0-next.6",
-    "@angular/compiler": "9.0.0-next.6",
-    "@angular/compiler-cli": "9.0.0-next.6",
-    "@angular/core": "9.0.0-next.6",
-    "@angular/forms": "9.0.0-next.6",
-    "@angular/platform-browser": "9.0.0-next.6",
-    "@angular/platform-browser-dynamic": "9.0.0-next.6",
-    "@angular/router": "9.0.0-next.6",
-    "@babel/core": "7.2.2",
-    "@babel/types": "7.3.0",
-    "@commitlint/cli": "7.3.2",
-    "@commitlint/config-conventional": "7.3.1",
-    "@commitlint/prompt-cli": "7.3.1",
-    "@types/jest": "23.3.13",
-    "babel-jest": "23.6.0",
-    "codelyzer": "4.5.0",
-    "docsify-cli": "4.3.0",
-    "husky": "1.3.1",
-    "jest": "23.6.0",
-    "jest-junit": "6.0.1",
-    "jest-preset-angular": "6.0.2",
-    "jest-zone-patch": "0.0.10",
-    "lerna": "3.13.4",
-    "lint-staged": "8.1.0",
-    "ng-packagr": "^5.5.1",
-    "npm-run-all": "4.1.5",
-    "prettier": "1.15.3",
-    "redux": "4.0.1",
-    "rimraf": "2.6.3",
-    "rxjs": "6.5.3",
-    "tsickle": "0.34.0",
-    "tslib": "1.9.3",
-    "tslint": "5.12.1",
-    "typescript": "3.5.3",
-    "zone.js": "0.10.2"
+  "peerDependencies": {
+    "@angular/core": "^7.0.0",
+    "redux": "^4.0.0",
+    "rxjs": "^6.0.0"
   },
+  "devDependencies": {
+    "redux-devtools-extension": "2.13.7"
+  },
+  "module": "fesm5/angular-redux-store.js",
+  "es2015": "fesm2015/angular-redux-store.js",
+  "esm5": "esm5/angular-redux-store.js",
+  "esm2015": "esm2015/angular-redux-store.js",
+  "fesm5": "fesm5/angular-redux-store.js",
+  "fesm2015": "fesm2015/angular-redux-store.js",
+  "typings": "angular-redux-store.d.ts",
+  "metadata": "angular-redux-store.metadata.json",
+  "sideEffects": false,
   "dependencies": {
-    "redux-devtools-extension": "^2.13.8"
+    "tslib": "^1.9.0"
   }
 }

@@ -1,0 +1,19 @@
+import { setClassOptions } from './helpers';
+/**
+ * Modifies the behaviour of any `@select`, `@select$`, or `@dispatch`
+ * decorators to operate on a substore defined by the IFractalStoreOptions.
+ *
+ * See:
+ * https://github.com/angular-redux/platform/blob/master/packages/store/articles/fractal-store.md
+ * for more information about SubStores.
+ */
+export function WithSubStore(_a) {
+    var basePathMethodName = _a.basePathMethodName, localReducer = _a.localReducer;
+    return function decorate(constructor) {
+        setClassOptions(constructor, {
+            basePathMethodName: basePathMethodName,
+            localReducer: localReducer,
+        });
+    };
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoid2l0aC1zdWItc3RvcmUuanMiLCJzb3VyY2VSb290Ijoibmc6Ly9AYW5ndWxhci1yZWR1eC9zdG9yZS8iLCJzb3VyY2VzIjpbImRlY29yYXRvcnMvd2l0aC1zdWItc3RvcmUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUF1QixlQUFlLEVBQUUsTUFBTSxXQUFXLENBQUM7QUFFakU7Ozs7Ozs7R0FPRztBQUNILE1BQU0sVUFBVSxZQUFZLENBQUMsRUFHUDtRQUZwQiwwQ0FBa0IsRUFDbEIsOEJBQVk7SUFFWixPQUFPLFNBQVMsUUFBUSxDQUFDLFdBQXFCO1FBQzVDLGVBQWUsQ0FBQyxXQUFXLEVBQUU7WUFDM0Isa0JBQWtCLG9CQUFBO1lBQ2xCLFlBQVksY0FBQTtTQUNiLENBQUMsQ0FBQztJQUNMLENBQUMsQ0FBQztBQUNKLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBGcmFjdGFsU3RvcmVPcHRpb25zLCBzZXRDbGFzc09wdGlvbnMgfSBmcm9tICcuL2hlbHBlcnMnO1xuXG4vKipcbiAqIE1vZGlmaWVzIHRoZSBiZWhhdmlvdXIgb2YgYW55IGBAc2VsZWN0YCwgYEBzZWxlY3QkYCwgb3IgYEBkaXNwYXRjaGBcbiAqIGRlY29yYXRvcnMgdG8gb3BlcmF0ZSBvbiBhIHN1YnN0b3JlIGRlZmluZWQgYnkgdGhlIElGcmFjdGFsU3RvcmVPcHRpb25zLlxuICpcbiAqIFNlZTpcbiAqIGh0dHBzOi8vZ2l0aHViLmNvbS9hbmd1bGFyLXJlZHV4L3BsYXRmb3JtL2Jsb2IvbWFzdGVyL3BhY2thZ2VzL3N0b3JlL2FydGljbGVzL2ZyYWN0YWwtc3RvcmUubWRcbiAqIGZvciBtb3JlIGluZm9ybWF0aW9uIGFib3V0IFN1YlN0b3Jlcy5cbiAqL1xuZXhwb3J0IGZ1bmN0aW9uIFdpdGhTdWJTdG9yZSh7XG4gIGJhc2VQYXRoTWV0aG9kTmFtZSxcbiAgbG9jYWxSZWR1Y2VyLFxufTogRnJhY3RhbFN0b3JlT3B0aW9ucyk6IENsYXNzRGVjb3JhdG9yIHtcbiAgcmV0dXJuIGZ1bmN0aW9uIGRlY29yYXRlKGNvbnN0cnVjdG9yOiBGdW5jdGlvbik6IHZvaWQge1xuICAgIHNldENsYXNzT3B0aW9ucyhjb25zdHJ1Y3Rvciwge1xuICAgICAgYmFzZVBhdGhNZXRob2ROYW1lLFxuICAgICAgbG9jYWxSZWR1Y2VyLFxuICAgIH0pO1xuICB9O1xufVxuIl19
